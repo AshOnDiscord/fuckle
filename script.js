@@ -1,5 +1,4 @@
 let gameOver = false;
-
 console.log(wordArray);
 
 const keyCodes = [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90];
@@ -143,10 +142,19 @@ function checkAnswer() {
   boxes = document.getElementsByClassName('currentRow')[0].getElementsByClassName('fullBox');
   fullGuess = boxes[0].innerHTML + boxes[1].innerHTML + boxes[2].innerHTML + boxes[3].innerHTML + boxes[4].innerHTML;
   console.log(fullGuess);
+
+  rows = document.getElementById('grid').getElementsByClassName('row');
   if (fullGuess == fullAnswer) {
     correct();
+  } else if (currentRow == rows[rows.length - 1]) {
+    gameOver = true;
+    failGame();
   }
   swapRow();
+}
+
+function failGame() {
+  console.log("nice try");
 }
 
 function swapRow () {

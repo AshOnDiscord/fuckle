@@ -125,6 +125,11 @@ nav button:hover {
   padding: 1rem;
   height: 3rem;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.key:hover {
+  background: #c4c8cc;
 }
 
 .sidebar {
