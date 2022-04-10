@@ -1,95 +1,23 @@
 console.log(wordArray);
 
+const keyCodes = [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90];
+const keyLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
 document.onkeydown = function(e){
   e = e || window.event;
   var key = e.which || e.keyCode;
-  switch (key) {
-    case 65:
-      btnPress("a");
+  for (let i = 0; i < keyCodes.length; i++) {
+    if (key == keyCodes[i]) {
+      btnPress(keyLetters[i]);
+      console.log(keyLetters[i]);
       break;
-    case 66:
-      btnPress("b");
-      break;
-    case 67:
-      btnPress("c");
-      break;
-    case 68:
-      btnPress("d");
-      break;
-    case 69:
-      btnPress("e");
-      break;
-    case 70:
-      btnPress("f");
-      break;
-    case 71:
-      btnPress("g");
-      break;
-    case 72:
-      btnPress("h");
-      break;
-    case 73:
-      btnPress("i");
-      break;
-    case 74:
-      btnPress("j");
-      break;
-    case 75:
-      btnPress("k");
-      break;
-    case 76:
-      btnPress("l");
-      break;
-    case 77:
-      btnPress("m");
-      break;
-    case 78:
-      btnPress("n");
-      break;
-    case 79:
-      btnPress("o");
-      break;
-    case 80:
-      btnPress("p");
-      break;
-    case 81:
-      btnPress("q");
-      break;
-    case 82:
-      btnPress("r");
-      break;
-    case 83:
-      btnPress("s");
-      break;
-    case 84:
-      btnPress("t");
-      break;
-    case 85:
-      btnPress("u");
-      break;
-    case 86:
-      btnPress("v");
-      break;
-    case 87:
-      btnPress("w");
-      break;
-    case 88:
-      btnPress("x");
-      break;
-    case 89:
-      btnPress("y");
-      break;
-    case 90:
-      btnPress("z");
-      break;
-    case 13:
-      enterAnswer();
-      break;
-    case 8:
+    } else if (key == 8) {
       deleteLast();
       break;
-    default:
+    } else if (key == 13) {
+      enterAnswer();
       break;
+    }
   }
 };
 
@@ -114,11 +42,9 @@ function enterAnswer() {
   currentRow = document.getElementById('grid').getElementsByClassName('currentRow')[0];
   if (currentRow.getElementsByClassName('fullBox').length < 5) {
     console.log("Not enough boxes");
-    alert("Not enough boxes");
     notEnough();
   } else {
     console.log("Enough boxes");
-    alert("Enough boxes");
     checkIfValid();
   }
 }
@@ -130,7 +56,16 @@ function notEnough() {
   }, 2000);
 }
 
+function randomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+console.log(randomInt(3));
+
+const correctMessages = ["Great!", "Nice!", "Genius",];
+
 function correct() {
+  document.getElementById("correct").getElementsByTagName("div")[0].innerHTML = correctMessages[randomInt(3)];
   document.getElementById("correct").style.opacity = "1";
   setTimeout(function() {
     document.getElementById("correct").style.opacity = "0";
@@ -151,6 +86,7 @@ fullAnswer = 'FURRY';
 
 
 function checkIfValid() {
+  inList = false;
   boxes = document.getElementsByClassName('currentRow')[0].getElementsByClassName('fullBox');
   fullGuess = boxes[0].innerHTML + boxes[1].innerHTML + boxes[2].innerHTML + boxes[3].innerHTML + boxes[4].innerHTML;
   console.log(fullGuess);
