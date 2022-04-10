@@ -130,7 +130,7 @@ nav button:hover {
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -22.5rem;
   width: 22.5rem;
   height: 100vh;
   background-color: #ffffff;
