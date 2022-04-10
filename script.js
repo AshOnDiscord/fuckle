@@ -147,3 +147,10 @@ function swapRow () {
   futureRow.classList.add('currentRow');
 }
 
+function openSidebar() {
+  document.getElementById("sidebar").style.left = "0";
+}
+
+function closeSidebar() {
+  document.getElementById("sidebar").style.left = "-22.5rem";
+}
