@@ -1,3 +1,5 @@
+document.getElementById("noJs").style.display = "none";
+
 let gameOver = false;
 console.log(wordArray);
 
