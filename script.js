@@ -5,8 +5,9 @@ console.log(wordArray);
 const keyCodes = [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90];
 const keyLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
-while (gameOver === false) {
-  document.onkeydown = function(e){
+
+document.onkeydown = function(e){
+  if (gameOver === false) {
     e = e || window.event;
     var key = e.which || e.keyCode;
     for (let i = 0; i < keyCodes.length; i++) {
@@ -22,15 +23,18 @@ while (gameOver === false) {
         break;
       }
     }
-  };
-}
+  }
+};
+
 
 function btnPress(btn) {
-  console.log(btn);
-  freeBox = document.getElementsByClassName('currentRow')[0].getElementsByClassName('emptyBox')[0];
-  freeBox.innerHTML = btn.toUpperCase();
-  freeBox.classList.remove('emptyBox');
-  freeBox.classList.add('fullBox');
+  if (gameOver === false) {
+    console.log(btn);
+    freeBox = document.getElementsByClassName('currentRow')[0].getElementsByClassName('emptyBox')[0];
+    freeBox.innerHTML = btn.toUpperCase();
+    freeBox.classList.remove('emptyBox');
+    freeBox.classList.add('fullBox');
+  }
 }
 
 function deleteLast() {
@@ -42,14 +46,16 @@ function deleteLast() {
 }
 
 function enterAnswer() {
-  console.log("enter");
-  currentRow = document.getElementById('grid').getElementsByClassName('currentRow')[0];
-  if (currentRow.getElementsByClassName('fullBox').length < 5) {
-    console.log("Not enough boxes");
-    notEnough();
-  } else {
-    console.log("Enough boxes");
-    checkIfValid();
+  if (gameOver === false) {
+    console.log("enter");
+    currentRow = document.getElementById('grid').getElementsByClassName('currentRow')[0];
+    if (currentRow.getElementsByClassName('fullBox').length < 5) {
+      console.log("Not enough boxes");
+      notEnough();
+    } else {
+      console.log("Enough boxes");
+      checkIfValid();
+    }
   }
 }
 
