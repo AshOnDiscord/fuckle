@@ -1,25 +1,29 @@
+let gameOver = false;
+
 console.log(wordArray);
 
 const keyCodes = [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90];
 const keyLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
-document.onkeydown = function(e){
-  e = e || window.event;
-  var key = e.which || e.keyCode;
-  for (let i = 0; i < keyCodes.length; i++) {
-    if (key == keyCodes[i]) {
-      btnPress(keyLetters[i]);
-      console.log(keyLetters[i]);
-      break;
-    } else if (key == 8) {
-      deleteLast();
-      break;
-    } else if (key == 13) {
-      enterAnswer();
-      break;
+while (gameOver === false) {
+  document.onkeydown = function(e){
+    e = e || window.event;
+    var key = e.which || e.keyCode;
+    for (let i = 0; i < keyCodes.length; i++) {
+      if (key == keyCodes[i]) {
+        btnPress(keyLetters[i]);
+        console.log(keyLetters[i]);
+        break;
+      } else if (key == 8) {
+        deleteLast();
+        break;
+      } else if (key == 13) {
+        enterAnswer();
+        break;
+      }
     }
-  }
-};
+  };
+}
 
 function btnPress(btn) {
   console.log(btn);
@@ -70,6 +74,7 @@ function correct() {
   setTimeout(function() {
     document.getElementById("correct").style.opacity = "0";
   }, 2000);
+  gameOver = true;
 }
 
 function invalid() {
