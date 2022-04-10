@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  border: 0;
+  margin: 0;
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif
+}
+
+#grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.box {
+  width: 4rem;
+  height: 4rem;
+  border: 3px solid #d3d6da;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d3d6da;
+  align-items: center;
+}
+
+h1 {
+  padding: 0;
+  margin: 1rem;
+}
+
+.left {
+  margin-left: 1rem;
+}
+
+.right {
+  margin-right: 1rem;
+}
+
+button {
+  display: flex-block;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+  border: 1px solid #d3d6da;
+  background: none;
+  color: #3c3f41;
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #eaebee;
+  color: #1c1d1f;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.popUp {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-top: 12.5rem;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.popUp div {
+  position: relative; 
+  left: -50%;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+}
