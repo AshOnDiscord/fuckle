@@ -1,4 +1,5 @@
 # Fuckle
 Low quality Wordle copy with vanilla js and css with html  
 Might fix some of the issues, might not  
-<sup>(Name comes a terrible joke among some of my friends)</sup>
+<sup>Named fuckle since you get fucked over by my shitty code C:</sup>
+also idk why this is outdated code and why i never pushed v2
