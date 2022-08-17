@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fuckle</title>
+    <link rel="stylesheet" href="output.css" />
+    <script src="index.js" type="module" defer></script>
+  </head>
+  <body>
+    <main id="grid">
+      <div class="row">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+      <div class="row">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+      <div class="row">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+      <div class="row">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+      <div class="row">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+      <div class="row">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+    </main>
+    <form>
+      <input type="text" />
+      <button>Submit</button>
+    </form>
+    <div class="correct somewhere wrong"></div>
+    <div id="modals">
+      <div
+        id="short"
+        class="invisible fixed top-0 left-0 flex h-screen w-screen items-center justify-center bg-gray-500/75"
+      >
+        <div
+          class="relative z-10 max-w-[20rem] border-b-4 border-slate-300 bg-white p-6 pb-4 shadow-md"
+        >
+          <div class="mb-1 grid grid-cols-[auto,min-content]">
+            <h1 class="text-lg font-medium leading-6 text-gray-900">
+              Word too short
+            </h1>
+            <button>x</button>
+          </div>
+          <p class="text-sm text-gray-500">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+            ducimus.
+          </p>
+        </div>
+        <button
+          class="absolute top-0 left-0 h-screen w-screen cursor-default"
+        ></button>
+      </div>
+      <div
+        id="invalid"
+        class="invisible fixed top-0 left-0 flex h-screen w-screen items-center justify-center bg-gray-500/75"
+      >
+        <div
+          class="relative z-10 max-w-[20rem] border-b-4 border-slate-300 bg-white p-6 pb-4 shadow-md"
+        >
+          <div class="mb-1 grid grid-cols-[auto,min-content]">
+            <h1 class="text-lg font-medium leading-6 text-gray-900">
+              Invalid Word
+            </h1>
+            <button>x</button>
+          </div>
+          <p class="text-sm text-gray-500">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui,
+            totam.
+          </p>
+        </div>
+        <button
+          class="absolute top-0 left-0 h-screen w-screen cursor-default"
+        ></button>
+      </div>
+      <div
+        id="won"
+        class="invisible fixed top-0 left-0 flex h-screen w-screen items-center justify-center bg-gray-500/75"
+      >
+        <div
+          class="relative z-10 max-w-[20rem] border-b-4 border-slate-300 bg-white p-6 pb-4 shadow-md"
+        >
+          <div class="mb-1 grid grid-cols-[auto,min-content]">
+            <h1 class="text-lg font-medium leading-6 text-gray-900">
+              You won!
+            </h1>
+            <button>x</button>
+          </div>
+          <p class="text-sm text-gray-500">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque iure
+            cupiditate amet sapiente ea sequi pariatur omnis quam id porro.
+          </p>
+        </div>
+        <button
+          class="absolute top-0 left-0 h-screen w-screen cursor-default"
+        ></button>
+      </div>
+      <div
+        id="lost"
+        class="invisible fixed top-0 left-0 flex h-screen w-screen items-center justify-center bg-gray-500/75"
+      >
+        <div
+          class="relative z-10 max-w-[20rem] border-b-4 border-slate-300 bg-white p-6 pb-4 shadow-md"
+        >
+          <div class="mb-1 grid grid-cols-[auto,min-content]">
+            <h1 class="text-lg font-medium leading-6 text-gray-900">
+              You lost.
+            </h1>
+            <button>x</button>
+          </div>
+          <p class="text-sm text-gray-500">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque iure
+            cupiditate amet sapiente ea sequi pariatur omnis quam id porro.
+          </p>
+          <p class="mt-1 text-sm text-gray-700">
+            Todays word was <span id="theWord">-----</span>.
+          </p>
+        </div>
+        <button
+          class="absolute top-0 left-0 h-screen w-screen cursor-default"
+        ></button>
+      </div>
+    </div>
+  </body>
+</html>

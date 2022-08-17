@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss": "^3.1.8"
+  },
+  "type": "module",
+  "name": "vanilla",
+  "version": "3.0.0",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./input.css -o ./output.css --watch",
+    "tailwindBuild": "npx tailwindcss -i ./input.css -o ./output.css --minify"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
